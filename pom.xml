@@ -30,11 +30,33 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-                        <failIfNoTests>true</failIfNoTests>
+                    <failIfNoTests>true</failIfNoTests>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                    <execution>
+                        <!-- id (придумываем сами) -->
+                        <id>prepare-agent-0192</id>
+                        <!-- <phase>initialize</phase> -->
+                        <goals>
+                            <!-- какую цель выполняем (берём из справки) -->
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <!-- id (придумываем сами) -->
+                        <id>1-report-1</id>
+                        <goals>
+                            <!-- какую цель выполняем (берём из справки) -->
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
